@@ -1,4 +1,7 @@
 #!/bin/bash
+#
+# Version: 0.1
+#
 # MIT License
 #
 # Copyright (c) 2018, Linus Ågren, OP5
@@ -48,6 +51,11 @@
 #
 #   "$TIMET" is here a standard Nagios macro that will be replaced before
 #   actually running the command.
+#
+#   Important note: The move_perfdata.sh file needs similar permissions
+#   to other files in /opt/monitor/etc, probably monitor:apache.
+#   If this file is owned by root:root, it will not be synced in a peered
+#   OP5 monitor environment.
 
 err() {
     echo "[$(date +'%Y-%m-%dT%H:%M:%S%z')]: $@" >&2
